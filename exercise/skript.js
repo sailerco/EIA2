@@ -1,16 +1,19 @@
 "use strict";
-let hello = prompt("Wie ist dein Name", "");
+let div = document.getElementById("text");
+sayHello();
+function sayHello() {
+    let p = document.createElement("p");
+    let hello = prompt("Wie ist dein Name", "");
+    if (hello != "" && hello != null)
+        p.innerHTML = "Hallo " + hello;
+    else
+        p.innerHTML = "Du hast kein Name?";
+    console.log(p);
+    div.appendChild(p);
+}
 /* if (hello != "") {
     alert("Hallo " + hello);
 } else {
     alert("Du hast kein Name?");
-}  */
-let div = document.getElementById("text");
-if (hello != "") {
-    let p = document.createElement("p").innerHTML = "aaa";
-    div.appendChild(p);
-}
-else {
-    /* alert("Du hast kein Name?"); */
-}
+}  */ 
 //# sourceMappingURL=skript.js.map

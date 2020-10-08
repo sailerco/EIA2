@@ -1,13 +1,20 @@
-let hello = prompt("Wie ist dein Name", "");
+
+let div: HTMLElement = document.getElementById("text") as HTMLElement;
+sayHello();
+function sayHello(): void{
+    let p: HTMLParagraphElement = document.createElement("p");
+    let hello = prompt("Wie ist dein Name", "");
+    
+    if (hello != "" && hello != null)
+        p.innerHTML = "Hallo " + hello;
+    else 
+        p.innerHTML = "Du hast kein Name?";
+    
+    console.log(p);
+    div.appendChild(p);
+} 
 /* if (hello != "") {
     alert("Hallo " + hello);
 } else {
     alert("Du hast kein Name?");
 }  */
-let div: HTMLElement = document.getElementById("text") as HTMLElement;
-if (hello != "") {
-    let p: HTMLElement = document.createElement("p").innerHTML = "aaa";
-    div.appendChild(p);
-} else {
-    /* alert("Du hast kein Name?"); */
-} 
