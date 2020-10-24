@@ -1,0 +1,60 @@
+body{
+    background-color: gainsboro;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+#field{
+    height: 100vh;
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+    justify-content: space-around;
+}
+#PC div, #uno div, #hand div{
+    width: 150px;
+    height: 220px;
+    margin: 5px;
+    border-radius: 20px;
+    color: white;
+    font-size: xx-large;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#hand, #PC, #uno{
+    display: flex;
+    flex-flow: row nowrap;
+}
+#PC div, #uno .closed{
+   background-color: white;
+}
+#PC div span, .closed span{
+    display: none;
+}
+div[color = "blue"]{
+    background-color: rgb(90, 90, 211);
+}
+div[color = "red"]{
+    background-color: rgb(224, 71, 71);
+}
+div[color = "green"]{
+    background-color: rgb(51, 168, 51);
+}
+div[color = "yellow"]{
+    background-color: rgb(243, 186, 0);
+}
+#PC div, .closed{
+   background-color: white;
+}
+#container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-flow: column wrap;
+}
+#rematch{
+    border: none;
+    border-radius: 20px;
+    font-size: larger;
+    height: 40px;
+}

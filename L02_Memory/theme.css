@@ -1,0 +1,47 @@
+body{
+    background-color: thistle;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+h1{
+    color: white;
+}
+#field{
+    display: flex;
+    flex-wrap: wrap;
+    align-content: stretch;    
+}
+#playerSection{
+    width: 100px;
+    flex: 0 1 auto;
+    padding-right: 10px;
+    font-size: larger;
+}
+#memory{
+    width: 1000px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+#memory.bigger{
+    flex: 1 1 auto;
+}
+#memory div{
+    flex: 0 1 16%;
+    background-color: white;
+    color: thistle;
+    border-radius: 10%;
+    text-align: center;
+    margin: 7px;
+    height: 130px;
+    font-size: 80px;
+}
+#memory.bigger div{
+    flex: 0 1 9%;
+    margin: 5px;
+}
+#memory .hidden span{
+    display: none;
+}
+.onTurn{
+    color: white;
+}
