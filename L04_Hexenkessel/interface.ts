@@ -4,11 +4,6 @@ namespace L04_Hexenkessel {
         price?: number;
         stepper?: boolean;
     }
-    /* export let item: Item[] = [
-        {name: "Rattenschwanz", price: 10},
-        {name: "Rattenschwanz", price: 10 },
-        {name: "Rattenschwanz", price: 10 }  
-    ]; */
     export interface Data {
         [category: string]: Item[];
     }
