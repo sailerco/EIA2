@@ -43,14 +43,14 @@ namespace L05_Hexenkessel {
         div.setAttribute("class", "invisible");
         if (clickedButton.id == "ingredients") {
             let select: HTMLSelectElement = <HTMLSelectElement>document.querySelector("select#Zutaten");
-            let menge: number = parseInt((<HTMLInputElement>document.querySelector("[name = 'Menge']")).value);
-            let price: number = menge * parseInt(select.selectedOptions[0].getAttribute("price")!);
+            let value: string = (<HTMLInputElement>document.getElementById("Zutaten_value")).value;
+            let price: number = parseInt(value) * parseInt(select.selectedOptions[0].getAttribute("price")!);
             let priceInString: string =  priceInCurrency(price, false);
-            p.innerHTML = "Füge " + (<HTMLInputElement>document.querySelector("[name = 'Menge']")).value + " Stück/ml " + select.value + " hinzu. (" + priceInString  + ") <br>";
+            p.innerHTML = "Füge " + value + " Stück/ml " + select.value + " hinzu. (" + priceInString  + ") <br>";
             document.getElementById("total")!.innerHTML = "<b>Gesamtpreis: " + priceInCurrency(total, true) + "</b>";
             p.setAttribute("preis", price.toFixed(0));
             action.appendChild(p);
-            div.appendChild(input("Menge", menge.toString(), "small"));
+            div.appendChild(input("Menge", value, "small"));
             div.appendChild(input("Ingredient", select.value, "mid"));
             div.appendChild(input("Price", priceInString, "mid"));
         }
