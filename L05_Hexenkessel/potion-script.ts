@@ -137,33 +137,34 @@ namespace L05_Hexenkessel {
         (<HTMLInputElement>document.getElementById("bubble" + y)).value = x;
     }
     function priceInCurrency(_price: number, _total: boolean): string { //price in Knuts
+        debugger;
         if (_total == false)
             total += _price;
         let knut: string;
         let sickel: string;
         let gallonen: string;
         if (_price < 29) {
-            return _price.toString() + " Knut ";
+            return _price.toString() + " Knut";
         } else if (_price < 493) {
-            sickel = (_price / 29).toFixed(0) + " Sickel ";  
-            knut = (_price % 29).toFixed(0) + " Knut ";
+            sickel = Math.floor(_price / 29) + " Sickel";  
+            knut = Math.floor(_price % 29) + " Knut";
             if (knut == "0 Knut")
                 return sickel;
             else
-                return sickel + knut;
+                return sickel + " " + knut;
         } else {
-            gallonen = (_price / 493).toFixed(0) + " Gallonen ";
+            gallonen = Math.floor(_price / 493) + " Gallonen";
             _price %= 493;
-            sickel = (_price / 29).toFixed(0) + " Sickel ";
-            knut = (_price % 29).toFixed(0) + " Knut ";
+            sickel = Math.floor(_price / 29) + " Sickel";
+            knut = Math.floor(_price % 29) + " Knut";
             if (sickel == "0 Sickel" && knut == "0 Knut")
                 return gallonen;
             else if (sickel == "0 Sickel")
                 return gallonen + knut;
             else if (knut == "0 Knut")
-                return gallonen + sickel;
+                return gallonen + " " + sickel;
             else
-                return gallonen + sickel + knut;
+                return gallonen + " " + sickel + " " + knut;
         }
     }
     function input(_name: string , _value: string, _size: string): HTMLElement {
