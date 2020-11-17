@@ -16,8 +16,8 @@ namespace L06_Hexenkessel {
         console.log(url);
         let response: Response = await fetch(url);
         console.log(response);
-        let responseReply: string = await response.text();
-        console.log(responseReply);
+        /* let responseReply: string = await response.text();
+        console.log(responseReply); */
         let reply: string = await response.json();
         console.log(reply);
         alert("Potion sent!");
