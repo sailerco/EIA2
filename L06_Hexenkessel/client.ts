@@ -9,7 +9,7 @@ namespace L06_Hexenkessel {
     }
     export async function sendPotion(_event: Event): Promise<void> {
         console.log("send Potion");
-        let url: string = "https://cocosailer.herokuapp.com";
+        let url: string = "https://cocosailer.herokuapp.com/";
         let formData: FormData = new FormData(document.forms[0]);
         let query: URLSearchParams = new URLSearchParams(<any>formData);
         url = url + query.toString();
