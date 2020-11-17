@@ -17,6 +17,12 @@ var L06_Hexenkessel;
         let query = new URLSearchParams(formData);
         url = url + "?" + query.toString();
         console.log(url);
+        let select = document.querySelector("select");
+        let textarea = document.querySelector("textarea");
+        if (select)
+            url += "&" + select.name + "=" + select.value;
+        if (textarea.value != "")
+            url += "&" + textarea.name + "=" + textarea.value;
         let response = await fetch(url);
         console.log(response);
         let responseReply = await response.text();
