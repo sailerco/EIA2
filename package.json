@@ -6,7 +6,7 @@
   "dependencies": {},
   "devDependencies": {},
   "scripts": {
-    "test": "node L06_Hexenkessel/server.js"
+    "start": "node L06_Hexenkessel/server.js"
   },
   "repository": {
     "type": "git",
