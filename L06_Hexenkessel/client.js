@@ -15,7 +15,7 @@ var L06_Hexenkessel;
         let url = "https://cocosailer.herokuapp.com/";
         let formData = new FormData(document.forms[0]);
         let query = new URLSearchParams(formData);
-        url = url + query.toString();
+        url = url + "?" + query.toString();
         console.log(url);
         let response = await fetch(url);
         console.log(response);
