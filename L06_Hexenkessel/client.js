@@ -19,10 +19,10 @@ var L06_Hexenkessel;
         console.log(url);
         let response = await fetch(url);
         console.log(response);
-        /* let responseReply: string = await response.text();
-        console.log(responseReply); */
-        let reply = await response.json();
-        console.log(reply);
+        let responseReply = await response.text();
+        console.log(responseReply);
+        /* let reply: string = await response.json();
+        console.log(reply); */
         alert("Potion sent!");
     }
     L06_Hexenkessel.sendPotion = sendPotion;
