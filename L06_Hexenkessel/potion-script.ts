@@ -1,4 +1,4 @@
-namespace L05_Hexenkessel {
+namespace L06_Hexenkessel {
     //#region client
     getData();        
     document.getElementById("submit")?.addEventListener("click", sendPotion);
