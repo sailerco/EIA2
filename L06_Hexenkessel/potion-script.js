@@ -140,7 +140,6 @@ var L06_Hexenkessel;
     }
     L06_Hexenkessel.slider = slider;
     function priceInCurrency(_price, _total) {
-        debugger;
         if (_total == false)
             total += _price;
         let knut;

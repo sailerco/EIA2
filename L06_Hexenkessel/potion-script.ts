@@ -137,7 +137,6 @@ namespace L06_Hexenkessel {
         (<HTMLInputElement>document.getElementById("bubble" + y)).value = x;
     }
     function priceInCurrency(_price: number, _total: boolean): string { //price in Knuts. 29 Knut = 1 Sickel, 493 Knut = 1 G, 17 S = 1 G
-        debugger;
         if (_total == false)
             total += _price;
         let knut: string;

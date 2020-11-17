@@ -11,6 +11,7 @@ namespace L06_Hexenkessel {
         
         console.log("send Potion");
         let url: string = "https://cocosailer.herokuapp.com/";
+        /* let url: string = "http://localhost:5001/"; */
         let formData: FormData = new FormData(document.forms[0]);
         let query: URLSearchParams = new URLSearchParams(<any>formData);
         url = url + "?" + query.toString();
@@ -18,15 +19,13 @@ namespace L06_Hexenkessel {
         let select: HTMLSelectElement = <HTMLSelectElement>document.querySelector("select");
         let textarea: HTMLTextAreaElement = <HTMLTextAreaElement>document.querySelector("textarea");
         if (select)
-            url += "&" + select.name + "=" + select.value;
+            url += "&Wirkung=" + select.value;
         if (textarea.value != "")
-            url += "&" + textarea.name + "=" + textarea.value;
+            url += "&Nebenwirkungen=" + textarea.value;
         let response: Response = await fetch(url);
         console.log(response);
         let responseReply: string = await response.text();
         console.log(responseReply);
-        /* let reply: string = await response.json();
-        console.log(reply); */
         alert("Potion sent!");
     }
 }
