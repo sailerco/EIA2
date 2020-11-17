@@ -1,0 +1,21 @@
+{
+  "name": "eia2",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "dependencies": {},
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sailerco/EIA2.git"
+  },
+  "author": "Corinna Sailer",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/sailerco/EIA2/issues"
+  },
+  "homepage": "https://github.com/sailerco/EIA2#readme"
+}
