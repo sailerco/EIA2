@@ -8,7 +8,6 @@ namespace L06_Hexenkessel {
         generateContent(data);    
     }
     export async function sendPotion(_event: Event): Promise<void> {
-        
         console.log("send Potion");
         let url: string = "https://cocosailer.herokuapp.com/";
         /* let url: string = "http://localhost:5001/"; */
