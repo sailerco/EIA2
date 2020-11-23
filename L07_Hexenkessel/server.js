@@ -11,8 +11,8 @@ var L07_Hexenkessel;
     if (port == undefined)
         port = 5001; //server hört auf port 5001
     console.log("Server starting on port:" + port);
-    /* let databaseUrl: string = "mongodb+srv://cocosailer:qJjLWY@clustergis-nrwvt.mongodb.net/Test?retryWrites=true&w=majority"; */
-    let databaseUrl = "mongodb://localhost:27017";
+    let databaseUrl = "mongodb+srv://cocosailer:ymiAAtdQQ@cocosailereia2.trquu.mongodb.net/<dbname>?retryWrites=true&w=majority";
+    /* let databaseUrl: string = "mongodb://localhost:27017"; */
     startServer(port);
     connectToDatabase(databaseUrl);
     function startServer(_port) {
