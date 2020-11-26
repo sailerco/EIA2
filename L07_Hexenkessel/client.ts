@@ -1,5 +1,5 @@
 namespace L07_Hexenkessel {
-    interface Rezept{
+    interface Rezept {
         _id: string;
         Trankname?: string;
         Wirkungsdauer?: string;
@@ -42,7 +42,7 @@ namespace L07_Hexenkessel {
     }
     export async function getPotion (_event: Event): Promise<void> {
         let url: string = "https://cocosailer.herokuapp.com/retrieve";
-        /* let url: string = "http://localhost:5001/retrieve";    */
+        /* let url: string = "http://localhost:5001/retrieve";  */  
         let response: Response = await fetch(url);
         let reply: Rezept[] = JSON.parse(await response.text());
         for (let i: number = 0; i < reply.length; i++) {

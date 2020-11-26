@@ -87,7 +87,7 @@ var L07_Hexenkessel;
                                 p.innerHTML += "Für " + document.getElementById(entry[1] + "_value").value + " min. ";
                                 break;
                             case "stirColor":
-                                p.innerHTML += "Bis solch eine Farbe erreicht wird " + document.getElementById("ColorStiring").value.toString();
+                                p.innerHTML += "Bis solch eine Farbe erreicht wird &#35" + document.getElementById("ColorStiring").value.slice(1);
                                 break;
                         }
                 }

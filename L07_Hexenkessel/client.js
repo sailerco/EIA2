@@ -26,7 +26,6 @@ var L07_Hexenkessel;
         if (textarea.value != "")
             url += "&Nebenwirkungen=" + textarea.value;
         url += "&Action=" + document.getElementById("action")?.innerHTML;
-        console.log(document.getElementById("action")?.innerHTML);
         if (document.getElementById("total")?.innerText != "")
             url += "&TotalPrice=" + document.getElementById("total")?.innerText;
         let response = await fetch(url);
@@ -38,7 +37,7 @@ var L07_Hexenkessel;
     L07_Hexenkessel.sendPotion = sendPotion;
     async function getPotion(_event) {
         let url = "https://cocosailer.herokuapp.com/retrieve";
-        /* let url: string = "http://localhost:5001/retrieve";    */
+        /* let url: string = "http://localhost:5001/retrieve";  */
         let response = await fetch(url);
         let reply = JSON.parse(await response.text());
         for (let i = 0; i < reply.length; i++) {
