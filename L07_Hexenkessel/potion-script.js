@@ -90,10 +90,11 @@ var L07_Hexenkessel;
                                 p.innerHTML += "Für " + document.getElementById(entry[1] + "_value").value + " min. ";
                                 break;
                             case "stirColor":
-                                let stirColorDiv = document.createElement("span");
-                                stirColorDiv.setAttribute("style", "background-color:" + document.getElementById("ColorStiring").value + "; width: 60px; height: 30px");
-                                p.innerHTML += "Bis solch eine Farbe erreicht wird";
-                                p.appendChild(stirColorDiv);
+                                let paragraph = document.createElement("p");
+                                /* let stirColorDiv: HTMLSpanElement = document.createElement("span"); */
+                                paragraph.setAttribute("style", "color:" + document.getElementById("ColorStiring").value + "");
+                                paragraph.innerHTML += "Bis solch eine Farbe erreicht wird";
+                                p.appendChild(paragraph);
                         }
                 }
             }
