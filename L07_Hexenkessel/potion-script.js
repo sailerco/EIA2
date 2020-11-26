@@ -68,10 +68,7 @@ var L07_Hexenkessel;
                                 p.innerHTML += "Für " + document.getElementById(entry[1] + "_value").value + " min. ";
                                 break;
                             case "Color":
-                                let colordiv = document.createElement("span");
-                                colordiv.setAttribute("style", "background-color:" + document.getElementById("Color").value + "; width: 60px; height: 30px");
-                                p.innerHTML += "Bis solch eine Farbe erreicht wird";
-                                p.appendChild(colordiv);
+                                p.innerHTML += "Bis solch eine Farbe erreicht wird " + document.getElementById("Color").value.toString();
                                 break;
                         }
                         break;
@@ -90,11 +87,8 @@ var L07_Hexenkessel;
                                 p.innerHTML += "Für " + document.getElementById(entry[1] + "_value").value + " min. ";
                                 break;
                             case "stirColor":
-                                let paragraph = document.createElement("p");
-                                /* let stirColorDiv: HTMLSpanElement = document.createElement("span"); */
-                                paragraph.setAttribute("style", "color:" + document.getElementById("ColorStiring").value + "");
-                                paragraph.innerHTML += "Bis solch eine Farbe erreicht wird";
-                                p.appendChild(paragraph);
+                                p.innerHTML += "Bis solch eine Farbe erreicht wird " + document.getElementById("ColorStiring").value.toString();
+                                break;
                         }
                 }
             }

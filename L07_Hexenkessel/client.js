@@ -26,6 +26,7 @@ var L07_Hexenkessel;
         if (textarea.value != "")
             url += "&Nebenwirkungen=" + textarea.value;
         url += "&Action=" + document.getElementById("action")?.innerHTML;
+        console.log(document.getElementById("action")?.innerHTML);
         if (document.getElementById("total")?.innerText != "")
             url += "&TotalPrice=" + document.getElementById("total")?.innerText;
         let response = await fetch(url);

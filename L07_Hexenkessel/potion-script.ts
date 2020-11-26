@@ -67,10 +67,7 @@ namespace L07_Hexenkessel {
                                 p.innerHTML += "Für " + (<HTMLInputElement>document.getElementById(entry[1] + "_value")).value + " min. ";
                                 break;    
                             case "Color":
-                                let colordiv: HTMLSpanElement = document.createElement("span");
-                                colordiv.setAttribute("style", "background-color:" + (<HTMLInputElement>document.getElementById("Color")!).value + "; width: 60px; height: 30px");
-                                p.innerHTML += "Bis solch eine Farbe erreicht wird";
-                                p.appendChild(colordiv); 
+                                p.innerHTML += "Bis solch eine Farbe erreicht wird "  + (<HTMLInputElement>document.getElementById("Color")!).value.toString();
                                 break;
                         } 
                         break;
@@ -88,11 +85,8 @@ namespace L07_Hexenkessel {
                             p.innerHTML += "Für " + (<HTMLInputElement>document.getElementById(entry[1] + "_value")).value + " min. ";
                             break;    
                         case "stirColor":
-                            let paragraph: HTMLParagraphElement = <HTMLParagraphElement>document.createElement("p");
-                            /* let stirColorDiv: HTMLSpanElement = document.createElement("span"); */
-                            paragraph.setAttribute("style", "color:" + (<HTMLInputElement>document.getElementById("ColorStiring")!).value + "");
-                            paragraph.innerHTML += "Bis solch eine Farbe erreicht wird";
-                            p.appendChild(paragraph);                     
+                            p.innerHTML += "Bis solch eine Farbe erreicht wird " + (<HTMLInputElement>document.getElementById("ColorStiring")!).value.toString() ;
+                            break;                   
                         } 
                 }
             } 
