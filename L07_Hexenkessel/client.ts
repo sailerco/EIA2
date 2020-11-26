@@ -49,14 +49,14 @@ namespace L07_Hexenkessel {
             let div: HTMLDivElement = document.createElement("div");  
             div.setAttribute("class", "vorschau");
             let p: HTMLElement = document.createElement("p");
-            p.innerHTML += "Trankname: " + reply[i].Trankname + "<br>";
+            p.innerHTML += "<h4>Trankname: " + reply[i].Trankname + "</h4><br>";
             if (reply[i].Nebenwirkung != undefined)
-                p.innerHTML += "Beschreibung, Nebenwirkungen: " + reply[i].Nebenwirkung + "<br>";
-            p.innerHTML += "Wirkung: " + reply[i].Wirkung + "<br>" + "Wirkungsdauer: " + reply[i].Wirkungsdauer + "<br>";
+                p.innerHTML += "<b>Beschreibung, Nebenwirkungen:</b> " + reply[i].Nebenwirkung + "<br>";
+            p.innerHTML += "<b>Wirkung:</b> " + reply[i].Wirkung + "<br>" + "<b>Wirkungsdauer:</b> " + reply[i].Wirkungsdauer + " min <br>";
             if (reply[i].Nebenwirkung != "")
-                p.innerHTML += "Anweisungen: " + reply[i].Action + "<br>";   
+                p.innerHTML += "<b>Anweisungen:</b> " + reply[i].Action + "<br>";   
             if (reply[i].TotalPrice != undefined)
-                p.innerHTML += "Gesamtpreis: " + reply[i].TotalPrice + "<br>";
+                p.innerHTML += "<b>" + reply[i].TotalPrice + "</b><br>";
             div.appendChild(p);
             document.getElementById("output")!.appendChild(div);           
         }   

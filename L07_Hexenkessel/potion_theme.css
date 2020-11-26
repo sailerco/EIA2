@@ -3,11 +3,14 @@ body{
     color: rgb(246, 245, 245);
     font-family: 'Ubuntu', sans-serif;
 }
-h1, h2{
+h1, h2, h4{
     font-family: 'Henny Penny';
     font-weight: 200;
     margin: 0;
     letter-spacing: 1px;
+}
+h4{
+    font-size: larger;
 }
 legend{
     font-family: 'Henny Penny';

@@ -69,7 +69,7 @@ export namespace L07_Hexenkessel {
         console.log(_potion);
         recipe.insertOne(_potion);
     }
-    function deletePotion(): void{
+    function deletePotion(): void {
         recipe.drop();
     }
 }
