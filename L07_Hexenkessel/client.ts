@@ -1,4 +1,13 @@
 namespace L07_Hexenkessel {
+    interface Rezept{
+        _id: string;
+        Trankname?: string;
+        Wirkungsdauer?: string;
+        Wirkung?: string;
+        Nebenwirkung?: string;
+        Action?: string;
+        TotalPrice?: string;
+    }
     export async function getData(): Promise<void> {
         let response: Response = await fetch("data.json"); 
         let content: string = await response.text();
@@ -22,7 +31,7 @@ namespace L07_Hexenkessel {
             url += "&Wirkung=" + select.value;
         if (textarea.value != "")
             url += "&Nebenwirkungen=" + textarea.value;
-        url += "&Action=" + document.getElementById("action")?.innerText;
+        url += "&Action=" + document.getElementById("action")?.innerHTML;
         if (document.getElementById("total")?.innerText != "")
             url += "&TotalPrice=" + document.getElementById("total")?.innerText;
         let response: Response = await fetch(url);
@@ -33,14 +42,23 @@ namespace L07_Hexenkessel {
     }
     export async function getPotion (_event: Event): Promise<void> {
         let url: string = "https://cocosailer.herokuapp.com/retrieve";
-        /* let url: string = "http://localhost:5001/retrieve"; */   
+        /* let url: string = "http://localhost:5001/retrieve";    */
         let response: Response = await fetch(url);
-        let reply: string = await response.text();
-        if (reply != "") {
-            let paragraph: HTMLElement = document.createElement("p");
-            paragraph.innerHTML = reply;
-            document.body.appendChild(paragraph);       
-        }
-         
+        let reply: Rezept[] = JSON.parse(await response.text());
+        for (let i: number = 0; i < reply.length; i++) {
+            let div: HTMLDivElement = document.createElement("div");  
+            div.setAttribute("class", "vorschau");
+            let p: HTMLElement = document.createElement("p");
+            p.innerHTML += "Trankname: " + reply[i].Trankname + "<br>";
+            if (reply[i].Nebenwirkung != undefined)
+                p.innerHTML += "Beschreibung, Nebenwirkungen: " + reply[i].Nebenwirkung + "<br>";
+            p.innerHTML += "Wirkung: " + reply[i].Wirkung + "<br>" + "Wirkungsdauer: " + reply[i].Wirkungsdauer + "<br>";
+            if (reply[i].Nebenwirkung != "")
+                p.innerHTML += "Anweisungen: " + reply[i].Action + "<br>";   
+            if (reply[i].TotalPrice != undefined)
+                p.innerHTML += "Gesamtpreis: " + reply[i].TotalPrice + "<br>";
+            div.appendChild(p);
+            document.getElementById("output")!.appendChild(div);           
+        }   
     }
 }

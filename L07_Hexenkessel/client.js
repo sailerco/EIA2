@@ -25,7 +25,7 @@ var L07_Hexenkessel;
             url += "&Wirkung=" + select.value;
         if (textarea.value != "")
             url += "&Nebenwirkungen=" + textarea.value;
-        url += "&Action=" + document.getElementById("action")?.innerText;
+        url += "&Action=" + document.getElementById("action")?.innerHTML;
         if (document.getElementById("total")?.innerText != "")
             url += "&TotalPrice=" + document.getElementById("total")?.innerText;
         let response = await fetch(url);
@@ -37,13 +37,23 @@ var L07_Hexenkessel;
     L07_Hexenkessel.sendPotion = sendPotion;
     async function getPotion(_event) {
         let url = "https://cocosailer.herokuapp.com/retrieve";
-        /* let url: string = "http://localhost:5001/retrieve"; */
+        /* let url: string = "http://localhost:5001/retrieve";    */
         let response = await fetch(url);
-        let reply = await response.text();
-        if (reply != "") {
-            let paragraph = document.createElement("p");
-            paragraph.innerHTML = reply;
-            document.body.appendChild(paragraph);
+        let reply = JSON.parse(await response.text());
+        for (let i = 0; i < reply.length; i++) {
+            let div = document.createElement("div");
+            div.setAttribute("class", "vorschau");
+            let p = document.createElement("p");
+            p.innerHTML += "Trankname: " + reply[i].Trankname + "<br>";
+            if (reply[i].Nebenwirkung != undefined)
+                p.innerHTML += "Beschreibung, Nebenwirkungen: " + reply[i].Nebenwirkung + "<br>";
+            p.innerHTML += "Wirkung: " + reply[i].Wirkung + "<br>" + "Wirkungsdauer: " + reply[i].Wirkungsdauer + "<br>";
+            if (reply[i].Nebenwirkung != "")
+                p.innerHTML += "Anweisungen: " + reply[i].Action + "<br>";
+            if (reply[i].TotalPrice != undefined)
+                p.innerHTML += "Gesamtpreis: " + reply[i].TotalPrice + "<br>";
+            div.appendChild(p);
+            document.getElementById("output").appendChild(div);
         }
     }
     L07_Hexenkessel.getPotion = getPotion;

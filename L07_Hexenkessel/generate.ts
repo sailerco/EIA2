@@ -8,7 +8,7 @@ namespace L07_Hexenkessel {
         [category: string]: Item[];
     }
     export function generateContent(_data: Data): void {
-        console.log(JSON.stringify(_data));
+        /* console.log(JSON.stringify(_data)); */
         let group: HTMLElement | null = null;
         for (let category in _data) {
             let items: Item[] = _data[category];

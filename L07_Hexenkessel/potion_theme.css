@@ -85,3 +85,14 @@ p{
     margin: 0;
     overflow: hidden;
 }
+#output{
+    display: flex;
+    flex-flow: row wrap;
+}
+.vorschau{
+    background-color: white;
+    color:#ccb9e7;
+    margin: 10px;
+    border-radius: 20px;
+    padding: 5px;
+}

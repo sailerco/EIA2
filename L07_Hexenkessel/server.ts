@@ -51,7 +51,7 @@ export namespace L07_Hexenkessel {
             let jsonString: string;
             if (url.pathname == "/retrieve") {
                 jsonString = JSON.stringify(await recipe.find().toArray());
-                jsonString += "<br>";
+                /* jsonString += "<br>"; */
                 _response.write(jsonString);
             } else if (url.pathname == "/send") {
                 console.log(_request.url);

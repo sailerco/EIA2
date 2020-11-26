@@ -41,7 +41,7 @@ var L07_Hexenkessel;
             let jsonString;
             if (url.pathname == "/retrieve") {
                 jsonString = JSON.stringify(await recipe.find().toArray());
-                jsonString += "<br>";
+                /* jsonString += "<br>"; */
                 _response.write(jsonString);
             }
             else if (url.pathname == "/send") {
