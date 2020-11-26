@@ -57,5 +57,12 @@ var L07_Hexenkessel;
         }
     }
     L07_Hexenkessel.getPotion = getPotion;
+    async function deleteDatabase(_event) {
+        let url = "https://cocosailer.herokuapp.com/delete";
+        /* let url: string = "http://localhost:5001/delete";  */
+        let response = await fetch(url);
+        document.getElementById("output").innerHTML = "";
+    }
+    L07_Hexenkessel.deleteDatabase = deleteDatabase;
 })(L07_Hexenkessel || (L07_Hexenkessel = {}));
 //# sourceMappingURL=client.js.map

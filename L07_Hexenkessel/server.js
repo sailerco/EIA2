@@ -50,12 +50,18 @@ var L07_Hexenkessel;
                 _response.write(jsonString);
                 storePotion(url.query);
             }
+            else if (url.pathname == "/delete") {
+                deletePotion();
+            }
         }
         _response.end();
     }
     function storePotion(_potion) {
         console.log(_potion);
         recipe.insertOne(_potion);
+    }
+    function deletePotion() {
+        recipe.drop();
     }
 })(L07_Hexenkessel = exports.L07_Hexenkessel || (exports.L07_Hexenkessel = {}));
 //# sourceMappingURL=server.js.map

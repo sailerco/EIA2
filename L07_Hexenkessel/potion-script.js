@@ -5,6 +5,7 @@ var L07_Hexenkessel;
     L07_Hexenkessel.getData();
     document.getElementById("submit")?.addEventListener("click", L07_Hexenkessel.sendPotion);
     document.getElementById("retrieve")?.addEventListener("click", L07_Hexenkessel.getPotion);
+    document.getElementById("deleteDatabase")?.addEventListener("click", L07_Hexenkessel.deleteDatabase);
     //#region handle form
     document.getElementById("formular")?.addEventListener("change", handleChange);
     document.getElementById("heat")?.addEventListener("click", handleButton);

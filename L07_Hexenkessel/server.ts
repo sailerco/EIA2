@@ -58,6 +58,8 @@ export namespace L07_Hexenkessel {
                 jsonString = JSON.stringify(url.query);
                 _response.write(jsonString);
                 storePotion(url.query);
+            } else if (url.pathname == "/delete") {
+                deletePotion();
             }
         }
 
@@ -66,5 +68,8 @@ export namespace L07_Hexenkessel {
     function storePotion(_potion: Potion): void {
         console.log(_potion);
         recipe.insertOne(_potion);
+    }
+    function deletePotion(): void{
+        recipe.drop();
     }
 }

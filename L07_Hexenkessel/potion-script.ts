@@ -3,6 +3,7 @@ namespace L07_Hexenkessel {
     getData();        
     document.getElementById("submit")?.addEventListener("click", sendPotion);
     document.getElementById("retrieve")?.addEventListener("click", getPotion);
+    document.getElementById("deleteDatabase")?.addEventListener("click", deleteDatabase);
     //#region handle form
     document.getElementById("formular")?.addEventListener("change", handleChange);
     document.getElementById("heat")?.addEventListener("click", handleButton);

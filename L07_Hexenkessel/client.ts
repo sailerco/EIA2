@@ -61,4 +61,10 @@ namespace L07_Hexenkessel {
             document.getElementById("output")!.appendChild(div);           
         }   
     }
+    export async function deleteDatabase(_event: Event): Promise<void> {
+        let url: string = "https://cocosailer.herokuapp.com/delete";
+        /* let url: string = "http://localhost:5001/delete";  */  
+        let response: Response = await fetch(url);
+        document.getElementById("output")!.innerHTML = "";      
+    }
 }
