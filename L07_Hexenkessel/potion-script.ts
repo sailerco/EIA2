@@ -51,34 +51,26 @@ namespace L07_Hexenkessel {
             document.getElementById("total")!.innerHTML = "<b>Gesamtpreis: " + priceInCurrency(total, true) + "</b>";
             p.setAttribute("preis", price.toFixed(0));
             action.appendChild(p);
-            /* div.appendChild(input("Menge", value, "small"));
-            div.appendChild(input("Ingredient", select.value, "mid"));
-            div.appendChild(input("Price", priceInString, "mid")); */
         }
         for (let entry of formData) {
             if (clickedButton.id == "heat") {
                 switch (entry[0]) {
                     case "heat":
                         p.innerHTML = "Bringe es auf " + entry[1] + " °C <br>";
-                        /* div.appendChild(input("heat", "Erhitzen", "mid"));
-                        div.appendChild(input("temperature", entry[1].toString(), "small")); */
                         break;
                     case "heating":
                         switch (entry[1]) {
                             case "Konsistenz":
                                 p.innerHTML += "Bis es " + (<HTMLSelectElement>document.querySelector("select#Konsistenz_value")).value + " wird. ";
-                                /* div.appendChild(input("Konsistenz", (<HTMLSelectElement>document.querySelector("select#Konsistenz_value")).value, "mid")); */
                                 break;
                             case "HeatTime":
                                 p.innerHTML += "Für " + (<HTMLInputElement>document.getElementById(entry[1] + "_value")).value + " min. ";
-                                /* div.appendChild(input("HeatTime", (<HTMLInputElement>document.getElementById(entry[1] + "_value")).value, "mid")); */
                                 break;    
                             case "Color":
-                                let colordiv: HTMLDivElement = document.createElement("div");
+                                let colordiv: HTMLSpanElement = document.createElement("span");
                                 colordiv.setAttribute("style", "background-color:" + (<HTMLInputElement>document.getElementById("Color")!).value + "; width: 60px; height: 30px");
                                 p.innerHTML += "Bis solch eine Farbe erreicht wird";
                                 p.appendChild(colordiv); 
-                                /* div.appendChild(input("Color", (<HTMLInputElement>document.getElementById("Color")!).value, "mid")); */
                                 break;
                         } 
                         break;
@@ -87,24 +79,20 @@ namespace L07_Hexenkessel {
                 switch (entry[0]) {
                     case "stir":
                         p.innerHTML = "Jetzt " + entry[1] + "<br>"; 
-                        /* div.appendChild(input("stir", entry[1].toString(), "mid")); */
                     case "stiring":
                         switch (entry[1]) {
                         case "Konsistenz":
                             p.innerHTML += "Bis es " + (<HTMLSelectElement>document.querySelector("select#Konsistenz_stir")).value + " wird. ";
-                            /* div.appendChild(input("stirKonsistenz", (<HTMLSelectElement>document.querySelector("select#Konsistenz_stir")).value, "mid")); */
                             break;
                         case "stirTime":
                             p.innerHTML += "Für " + (<HTMLInputElement>document.getElementById(entry[1] + "_value")).value + " min. ";
-                            /* div.appendChild(input("stirTime", (<HTMLInputElement>document.getElementById(entry[1] + "_value")).value, "mid")); */
                             break;    
                         case "stirColor":
-                            let stirColorDiv: HTMLDivElement = document.createElement("div");
+                            let stirColorDiv: HTMLSpanElement = document.createElement("span");
                             stirColorDiv.setAttribute("style", "background-color:" + (<HTMLInputElement>document.getElementById("ColorStiring")!).value + "; width: 60px; height: 30px");
                             p.innerHTML += "Bis solch eine Farbe erreicht wird";
-                            p.appendChild(stirColorDiv);
-                           /*  div.appendChild(input("stirColor", (<HTMLInputElement>document.getElementById("ColorStiring")!).value, "mid")); */
-                     } 
+                            p.appendChild(stirColorDiv);                     
+                        } 
                 }
             } 
             action.appendChild(p);
@@ -167,13 +155,4 @@ namespace L07_Hexenkessel {
                 return gallonen + " " + sickel + " " + knut;
         }
     }
-    /* function input(_name: string , _value: string, _size: string): HTMLElement {
-        let input: HTMLInputElement = document.createElement("input");
-        input.type = "text";
-        input.name = _name;
-        input.value = _value;
-        input.setAttribute("readonly", "readonly");
-        input.setAttribute("class", _size);
-        return input;
-    } */
 }  
