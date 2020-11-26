@@ -1,0 +1,20 @@
+body{
+    background-color: #C3E2F6;
+}
+fieldset{
+    border: solid white 2px;
+}
+legend{
+    color: white;
+    font-size: large;
+}
+.reveal{
+    opacity: 0;
+    max-height: 0px;
+    overflow: hidden;
+}
+input[type="radio"]:checked ~ .reveal{
+    max-height: max-content;
+    opacity: 1;
+    overflow: visible;
+}

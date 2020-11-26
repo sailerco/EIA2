@@ -1,0 +1,19 @@
+body{
+    display: flex;
+    flex-flow: row;
+}
+
+.reveal{
+    opacity: 0;
+    max-height: 0px;
+    margin: 0;
+    overflow: hidden;
+}
+input[type="checkbox"]:checked + label + .reveal{
+    max-height: max-content;
+    opacity: 1;
+    overflow: visible;
+}
+.time{
+    width: 20px
+}

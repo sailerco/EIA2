@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RPG Character</title>
+    <link rel="stylesheet" href="theme.css">
+    <script src="rpg-script.js"></script>
+</head>
+<body>
+    <form id="formular">
+        <fieldset>
+            <label for="fname">First name:</label><br>
+            <input type="text" id="fname" name="fname" placeholder="John"><br>
+            Geschlecht:
+            <br>
+            <select name="gender" id="gender" form="genderform">
+                <option value="female">Female</option>
+                <option value="male">Male</option>
+                <option value="other">Other</option>
+            </select>
+        </fieldset>
+        <fieldset>
+            <legend>Rasse</legend>
+            <input type="radio" id="zwerg" name="race" value="zwerg">
+            <label for="zwerg">Zwerg</label><br>
+            <input type="radio" id="ork" name="race" value="ork">
+            <label for="ork">Ork</label><br>
+            <input type="radio" id="elf" name="race" value="elf">
+            <label for="elf">Elf</label>
+        </fieldset>
+        <fieldset>
+            <legend>Körper</legend>
+            <label for="height">
+                <p>Größe: 
+                <input id="height" type="number" min="100" max="220" step="1" value="175">
+                cm</p>
+            </label>
+            <label for="weight">
+                <p>Gewicht: 
+                <input id="weight" type="number" min="30" max="225" step="0.5" value="75">
+                kg</p>
+            </label> 
+        </fieldset>
+        <fieldset> <!--weapon-->
+            <legend>Weapon</legend>
+                <div>
+                    <input type="radio" id="one-handed" name="weapon" value="one-handed">
+                    <label for="one-handed">one-handed</label><br>
+                        <div class="reveal">
+                            <select name="oneWeapon" id="one" form="one">
+                                <option value="groß">Großschwert</option>
+                                <option value="axt">Axt</option>
+                            </select>
+                        </div>
+                </div>
+                <input type="radio" id="two-handed" name="weapon" value="two-handed">
+                <label for="two-handed">two-handed</label><br>
+                    <div class="reveal">
+                        <label for="righthand">right</label><br> 
+                        <select name="righthand" id="two" form="two">
+                            <option value="small">Großschwert</option>
+                            <option value="what">Axt</option>
+                        </select><br>
+                        <label for="lefthand">left</label><br> 
+                        <select name="lefthand" id="two" form="two">
+                            <option value="small">Großschwert</option>
+                            <option value="what">Axt</option>
+                        </select>
+                    </div>
+        </fieldset>
+       <!--  <fieldset> 
+            <legend>Aussehen</legend>
+            <label for="favcolor">Eyes</label>
+            <input type="color" id="favcolor" name="favcolor" value=""><br>
+            <label for="haircolor">Hair</label>
+            <input type="color" id="haircolor" name="haircolor" value="">
+        </fieldset> -->
+        <fieldset> <!--accessiors-->
+            <legend>Deko</legend>
+            <input type="checkbox" id="amulette" name="deko" value="amulette">
+            <label for="amulette">Amulette</label><br>
+            <input type="checkbox" id="ring" name="deko" value="ring">
+            <label for="ring">Ring</label><br>
+        </fieldset>
+        <!-- Größe:
+        <input type="range" id="height" name="cm" min="50" max="300"><br>
+        Weight:
+        <input type="range" id="weight" name="kg" min="5" max="300"><br> -->
+        <fieldset>
+            <legend>Backstory</legend>    
+            <textarea></textarea>
+        </fieldset>
+        <fieldset> <!--bday-->
+            <legend>Geburtstag</legend>
+            <input type="date" id="birthday" name="birthday">
+        </fieldset>
+        <fieldset> <!--out-->
+            <legend>Output</legend>
+            <p>BMI: <output id="BMI" for="height weight"></output></p>
+            <p>Age: <output id ="age" for = "birthday"></output></p>
+        </fieldset> 
+        
+    </form>
+    <div id="char"></div>
+</body>
+</html>

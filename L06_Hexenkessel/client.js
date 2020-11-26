@@ -12,8 +12,8 @@ var L06_Hexenkessel;
     L06_Hexenkessel.getData = getData;
     async function sendPotion(_event) {
         console.log("send Potion");
-        let url = "https://cocosailer.herokuapp.com/";
-        /* let url: string = "http://localhost:5001/"; */
+        /* let url: string = "https://cocosailer.herokuapp.com/"; */
+        let url = "http://localhost:5001/";
         let formData = new FormData(document.forms[0]);
         let query = new URLSearchParams(formData);
         url = url + "?" + query.toString();

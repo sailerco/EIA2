@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="potion_theme.css">
+    <script src="potion-script.js" defer></script>
+</head>
+<body>
+    <form id="formular">
+        <fieldset>
+            <legend></legend>
+            <label for="name">Name</label><br>
+            <input type="text" id="name" name="Zaubertrank" placeholder="Phial of Victory" value="" class="basic"><br>
+            Beschreibung, Risiken und Nebenwirkungen<br>
+            <textarea></textarea>
+        </fieldset>
+        <fieldset>
+            <legend>Wirkung</legend>
+            <select name="impact" id="impact" form="impactForm" class="basic">
+                <option value="love">Liebestrank</option>
+                <option value="sleep">Schlaftrunk</option>
+                <option value="age">Alterstrunk</option>
+                <option value="happy">Euphorie-Trank</option>
+                <option value="lucky">Glückstrank</option>
+                <option value="heal">Gegengift</option>
+                <option value="life">Elixir des Lebens</option>
+                <option value="truth">Wahrheitselixir</option>
+                <option value="change">Vielsafttrank</option>
+                <option value="strength">Stärketrunk</option>
+            </select> <br>
+            <label for="Wirkungsdauer">Wirkungsdauer:</label> 
+            <input type="range" name="Wirkungsdauer" id="time" min="1" max="60" step="1" value="" class="basic"><input type="text" id="bubbletime" value="" class="time" disabled> h <br>
+            
+        </fieldset>
+        <fieldset>
+            <legend>Zutaten</legend>
+                <input type="checkbox" id="rat" name="ingredients" value="Rattenschwanz" price="10"> 
+                <label for="rat">Rattenschwanz</label>
+                <p class="reveal"><input id="rat_value" type="number" min="1" max="10" step="1" value="1"></input> Stück</p>
+                
+                <input type="checkbox" id="spider" name="ingredients" value="Spinnenbeine" price="5">
+                <label for="spider">Spinnenbeine</label> 
+                <p class="reveal"><input id="spider_value" type="number" min="1" max="10" step="1" value="1" > Stück </p>
+
+                <input type="checkbox" id="aal" name="ingredients" value="Aalaugen" price="15"> 
+                <label for="aal">Aalaugen</label>
+                <p class="reveal"><input id="aal_value" type="number" min="1" max="10" step="1" value="1"> Stück </p>
+
+                <input type="checkbox" id="blutegel" name="ingredients" value="Blutegel" price="20">
+                <label for="blutegel">Blutegel</label>
+                <p class="reveal"><input id="blutegel_value" type="number" min="1" max="10" step="1" value="1"> Stück </p>
+
+                <input type="checkbox" id="echse" name="ingredients" value="Echsenblut" price="5"> 
+                <label for="echse">Echsenblut</label>
+                <p class="reveal"><input id="echse_value" type="range" min="1" max="500" step="1" value="11"> <input type="text" id="bubbleechse_value" value="11" class="ml"> ml</p>
+
+                <input type="checkbox" id="unicorn" name="ingredients" value="Einhorntränen" price="300"> 
+                <label for="unicorn">Einhorntränen</label>
+                <p class="reveal"><input id="unicorn_value" type="range" min="1" max="500" step="1" value="11"> <input type="text" id="bubbleunicorn_value" value="11" class="ml"> ml</p>
+
+                <input type="checkbox" id="flubberwurmschleim" name="ingredients" value="Flubberwurmschleim" price="50"> 
+                <label for="flubberwurmschleim">Flubberwurmschleim</label>
+                <p class="reveal"><input id="flubberwurmschleim_value" type="range" min="1" max="500" step="1" value="200"> <input type="text" id="bubbleflubberwurmschleim_value" value="" class="ml"> ml</p>
+
+                <input type="checkbox" id="gift" name="ingredients" value="Gift" price="60"> 
+                <label for="gift">Gift</label>
+                <p class="reveal"><input id="gift_value" type="range" min="1" max="500" step="10" value="11"> <input type="text" id="bubblegift_value" value="11" class="ml"> ml</p>
+        </fieldset>
+        <fieldset>
+            <legend>Erhitzen/Abhühlen?</legend>
+            <label for="temperature">Auf Welche Temperatur soll er gebracht werden?</label> 
+            <input type="number" name="Auf diese Temperatur bringen" id="temperature"  min="-20" max="300" step="10" value="100"> °C <br>
+            
+            <label for="heatTime">Dauer:</label> 
+            <input id="heatTime" name="Auf der Temperatur halten für" type="range" min="1" max="60" step="1" value="30"><input type="text" id="bubbleheatTime" value="" class="time"> min<br>
+            
+            Konsistenz<br>
+            <input type="radio" id="dünnflüssig" name="konsistenz" value="dünnflüssig">
+            <label for="dünnflüssig">dünnflüssig</label>
+            <input type="radio" id="cremig" name="konsistenz" value="cremig">
+            <label for="cremig">cremig</label><br>
+            <input type="radio" id="schleimig" name="konsistenz" value="schleimig">
+            <label for="schleimig">schleimig</label>
+            <input type="radio" id="zäh" name="konsistenz" value="zäh">
+            <label for="zäh">zäh</label>
+        
+            <br>
+            <label for="Farbe nach erhitzen/kühlen">Welche Farbe sollte der Trank haben:</label>
+            <input type="color" id="color" name="Farbe nach erhitzen/kühlen">
+        </fieldset>  
+        <fieldset>
+            <legend>Rühren</legend>
+            
+            Wie stark soll gerührt werden?
+            <select name="stir" id="stir" form="stirForm">
+                <option value="Unterrühren">Unterrühren</option>
+                <option value="Schwach rühren">Schwach rühren</option>
+                <option value="Stark rühren">Stark rühren</option>
+                <option value="Zauberstab">Zauberstab</option>
+            </select>
+            <br>
+            Dauer
+            <input id="endTime" name="Rührdauer" type="range" min="1" max="60" step="1" value="20"><input type="text" id="bubbleendTime" value="" class="time"> min <br>
+            Konsistenz
+            <br>
+            <input type="radio" id="dünnflüssiger" name="Konsistenz nach dem Rühren" value="dünnflüssig">
+            <label for="dünnflüssiger">dünnflüssig</label>
+            <input type="radio" id="cremiger" name="Konsistenz nach dem Rühren" value="cremig">
+            <label for="cremiger">cremig</label><br>
+            <input type="radio" id="schleimiger" name="Konsistenz nach dem Rühren" value="schleimig">
+            <label for="schleimiger">schleimig</label>
+            <input type="radio" id="zäher" name="Konsistenz nach dem Rühren" value="zäh">
+            <label for="zäher">zäh</label>
+            <br>
+            <label for="color">Welche Farbe sollte der Trank haben:</label>
+            <input type="color" id="endColor" name="color">
+        </fieldset>
+    </form>
+    <div id="recipe"></div>
+</body>
+</html>
