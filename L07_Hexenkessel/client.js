@@ -40,6 +40,7 @@ var L07_Hexenkessel;
         /* let url: string = "http://localhost:5001/retrieve";  */
         let response = await fetch(url);
         let reply = JSON.parse(await response.text());
+        document.getElementById("output").innerHTML = "";
         for (let i = 0; i < reply.length; i++) {
             let div = document.createElement("div");
             div.setAttribute("class", "vorschau");

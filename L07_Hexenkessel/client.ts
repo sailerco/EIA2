@@ -45,6 +45,7 @@ namespace L07_Hexenkessel {
         /* let url: string = "http://localhost:5001/retrieve";  */  
         let response: Response = await fetch(url);
         let reply: Rezept[] = JSON.parse(await response.text());
+        document.getElementById("output")!.innerHTML = "";
         for (let i: number = 0; i < reply.length; i++) {
             let div: HTMLDivElement = document.createElement("div");  
             div.setAttribute("class", "vorschau");
